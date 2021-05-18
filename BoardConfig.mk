@@ -106,3 +106,6 @@ TW_USE_TOOLBOX := true
 TW_EXCLUDE_DEFAULT_USB_INIT := true
 TW_EXCLUDE_TWRPAPP := true
 TW_INCLUDE_REPACKTOOLS := true
+
+#PBRP Configuration
+PB_TORCH_PATH := /sys/class/leds/flashlight-back
