@@ -9,4 +9,8 @@ PBRP-feb-9.0 = PitchBlack Recovery Project İçin 5 Şubat 2021 Güvenlik Yamal�
 
 
 
+![alt text](https://github.com/Headache01/device_GM_GM8_sprout/blob/feb-9.0/features.png?raw=true)
+
+
+
 ![alt text](https://github.com/Headache01/device_GM_GM8_sprout/blob/feb-9.0/gm8.jpg?raw=true)
