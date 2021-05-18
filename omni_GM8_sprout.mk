@@ -14,8 +14,8 @@
 # limitations under the License.
 #
 
-# Inherit some common Omni stuff.
-$(call inherit-product, vendor/omni/config/common.mk)
+# Inherit some common PitchBlack stuff.
+$(call inherit-product, vendor/PitchBlack/config/common.mk)
 $(call inherit-product, build/target/product/embedded.mk)
 
 ALLOW_MISSING_DEPENDENCIES=true
