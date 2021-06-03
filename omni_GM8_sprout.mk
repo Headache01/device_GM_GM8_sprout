@@ -66,6 +66,6 @@ PRODUCT_PACKAGES += \
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := GM8_sprout
 PRODUCT_NAME := omni_GM8_sprout
-PRODUCT_BRAND := General Mobile
+PRODUCT_BRAND := GM
 PRODUCT_MODEL := GM 8
 PRODUCT_MANUFACTURER := General Mobile
