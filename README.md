@@ -8,9 +8,12 @@ feb-9.0 = 5 Şubat 2021 Güvenlik Yamalı Android 9 /// Android 9 with Security 
 PBRP-feb-9.0 = PitchBlack Recovery Project İçin 5 Şubat 2021 Güvenlik Yamalı Android 9 /// Android 9 with the February 5, 2021 Security Update for the PitchBlack Recovery Project
 
 
-
-![alt text](https://github.com/Headache01/device_GM_GM8_sprout/blob/feb-9.0/features.png?raw=true)
-
+SHRP-feb-9.0 = SkyHawk Recovery Project İçin 5 Şubat 2021 Güvenlik Yamalı Android 9 /// Android 9 with the February 5, 2021 Security Update for the SkyHawk Recovery Project
 
 
-![alt text](https://github.com/Headache01/device_GM_GM8_sprout/blob/feb-9.0/gm8.jpg?raw=true)
+
+![alt text](https://github.com/Headache01/recovery_GM_GM8_sprout/blob/feb-9.0/features.png?raw=true)
+
+
+
+![alt text](https://github.com/Headache01/recovery_GM_GM8_sprout/blob/feb-9.0/gm8.jpg?raw=true)
