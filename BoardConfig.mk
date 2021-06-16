@@ -107,5 +107,16 @@ TW_EXCLUDE_DEFAULT_USB_INIT := true
 TW_EXCLUDE_TWRPAPP := true
 TW_INCLUDE_REPACKTOOLS := true
 
-#PBRP Confguration
-PB_TORCH_PATH := /sys/class/leds/flashlight-back
+#SHRP Confguration
+SHRP_PATH := device/GM/GM8_sprout
+SHRP_MAINTAINER := Headache01
+SHRP_DEVICE_CODE := GM8_sprout,GM8_d_sprout
+SHRP_EDL_MODE := 1
+SHRP_INTERNAL := /sdcard
+SHRP_EXTERNAL := /external_sd
+SHRP_OTG := /usb-otg
+SHRP_FLASH := 1
+SHRP_FONP_1 := /sys/class/leds/flashlight-back
+SHRP_FLASH_MAX_BRIGHTNESS := 255
+SHRP_AB := true
+SHRP_DEVICE_TYPE := A/B
