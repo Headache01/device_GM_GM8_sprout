@@ -1,0 +1,20 @@
+# mount point       fstype    device                                                                flags
+/system             ext4      /dev/block/bootdevice/by-name/system                                  flags=display="System";backup=1;
+/system_image       emmc      /dev/block/bootdevice/by-name/system                                  flags=display="System image";backup=1;flashimg=1;
+/vendor             ext4      /dev/block/bootdevice/by-name/vendor                                  flags=display="Vendor";backup=1;
+/vendor_image       emmc      /dev/block/bootdevice/by-name/vendor                                  flags=display="Vendor image";backup=1;flashimg=1;
+/data               ext4      /dev/block/bootdevice/by-name/userdata                                flags=display="Data";
+/sdcard1            vfat      /dev/block/mmcblk1p1                                                  flags=display="Sdcard1";
+/boot               emmc      /dev/block/bootdevice/by-name/boot                                    flags=display="Boot";backup=1;flashimg=1;
+/misc               emmc      /dev/block/bootdevice/by-name/misc                                    flags=display="Misc";backup=1;flashimg=1;
+/persist            ext4      /dev/block/bootdevice/by-name/persist                                 flags=display="Persist";
+/persist_image      emmc      /dev/block/bootdevice/by-name/persist                                 flags=display="Persist image";backup=1;flashimg=1;
+/splash             emmc      /dev/block/bootdevice/by-name/splash                                  flags=display="Splash";
+/firmware           emmc      /dev/block/bootdevice/by-name/modem                                   flags=display="Firmware";
+/sbl1               emmc      /dev/block/bootdevice/by-name/sbl1                                    flags=display="Sbl1";
+/aboot              emmc      /dev/block/bootdevice/by-name/aboot                                   flags=display="Aboot";
+/rpm                emmc      /dev/block/bootdevice/by-name/rpm                                     flags=display="Rpm";
+/tz                 emmc      /dev/block/bootdevice/by-name/tz                                      flags=display="Tz";
+/keymaster          emmc      /dev/block/bootdevice/by-name/keymaster                               flags=display="Keymaster";
+/cmnlib             emmc      /dev/block/bootdevice/by-name/cmnlib                                  flags=display="Cmnlib";
+/dsp                emmc      /dev/block/bootdevice/by-name/dsp                                     flags=display="Dsp";
