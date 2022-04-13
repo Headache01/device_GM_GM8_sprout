@@ -1,4 +1,4 @@
-# ...
+name: Recovery Builder
 jobs:
   recovery_builder:
     runs-on: ubuntu-latest
