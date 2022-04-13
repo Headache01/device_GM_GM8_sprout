@@ -22,3 +22,10 @@ jobs:
           FLAVOR: "eng" #eng or userdebug
           EXTRA_CMD: ""  #If you want to Execute any external Command Before Compilation Start
           TZ: "Europe/Istanbul"           # Set Time-Zone According To Your Region
+
+       - name: Upload SHRP zip to github
+         uses: actions/upload-artifact@v3
+         with:
+              name: SHRP Recovery Github Test
+              path: ${BuildPath}/out/target/product/${CODENAME}/*stable*.zip
+       
