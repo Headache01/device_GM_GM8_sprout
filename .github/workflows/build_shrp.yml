@@ -13,7 +13,7 @@ jobs:
       - name: "Recovery Compilation"
         uses: CarbonatedBlack/Recovery-Compiler@production
         env:
-          MANIFEST: "Recovery Manifest URL with -b branch"     # or "orangefox10" for Orangefox Android v10
+          MANIFEST: "https://github.com/SHRP/manifest.git -b v3_9.0"     # Recovery Manifest URL with -b branch
           DT_LINK: "https://github.com/Headache01/shrp_GM_GM8_sprout.git" # Device Tree URL
           VENDOR: "GM."  # Example: xiaomi, samsung, asus, etc.
           CODENAME: "GM8_sprout"   # Example: nikel, phoenix, ginkgo, etc.
