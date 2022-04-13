@@ -1,4 +1,15 @@
 name: Recovery Builder
+  env:
+     MANIFEST: "https://github.com/SHRP/manifest.git -b v3_9.0"     # Recovery Manifest URL with -b branch
+     DT_LINK: "https://github.com/Headache01/shrp_GM_GM8_sprout.git" # Device Tree URL
+     VENDOR: "GM."  # Example: xiaomi, samsung, asus, etc.
+     CODENAME: "GM8_sprout"   # Example: nikel, phoenix, ginkgo, etc.
+     KERNEL_LINK: ""   # Only for building kernel from source. Ignore if using prebuilt.
+     TARGET: "bootimage" #Set as recoveryimage (or bootimage if no recovery partition avaiable)
+     FLAVOR: "eng" #eng or userdebug
+     EXTRA_CMD: ""  #If you want to Execute any external Command Before Compilation Start
+     TZ: "Europe/Istanbul"           # Set Time-Zone According To Your Region
+
 jobs:
   recovery_builder:
     runs-on: ubuntu-latest
@@ -12,16 +23,6 @@ jobs:
       # That's it! Now use this action
       - name: "Recovery Compilation"
         uses: CarbonatedBlack/Recovery-Compiler@production
-        env:
-          MANIFEST: "https://github.com/SHRP/manifest.git -b v3_9.0"     # Recovery Manifest URL with -b branch
-          DT_LINK: "https://github.com/Headache01/shrp_GM_GM8_sprout.git" # Device Tree URL
-          VENDOR: "GM."  # Example: xiaomi, samsung, asus, etc.
-          CODENAME: "GM8_sprout"   # Example: nikel, phoenix, ginkgo, etc.
-          KERNEL_LINK: ""   # Only for building kernel from source. Ignore if using prebuilt.
-          TARGET: "bootimage" #Set as recoveryimage (or bootimage if no recovery partition avaiable)
-          FLAVOR: "eng" #eng or userdebug
-          EXTRA_CMD: ""  #If you want to Execute any external Command Before Compilation Start
-          TZ: "Europe/Istanbul"           # Set Time-Zone According To Your Region
 
        - name: Upload SHRP zip to github
          uses: actions/upload-artifact@v3
