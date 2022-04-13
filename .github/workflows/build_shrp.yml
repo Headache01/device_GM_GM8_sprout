@@ -1,32 +1,48 @@
-name: Recovery Builder
-  env:
-     MANIFEST: "https://github.com/SHRP/manifest.git -b v3_9.0"     # Recovery Manifest URL with -b branch
-     DT_LINK: "https://github.com/Headache01/shrp_GM_GM8_sprout.git" # Device Tree URL
-     VENDOR: "GM."  # Example: xiaomi, samsung, asus, etc.
-     CODENAME: "GM8_sprout"   # Example: nikel, phoenix, ginkgo, etc.
-     KERNEL_LINK: ""   # Only for building kernel from source. Ignore if using prebuilt.
-     TARGET: "bootimage" #Set as recoveryimage (or bootimage if no recovery partition avaiable)
-     FLAVOR: "eng" #eng or userdebug
-     EXTRA_CMD: ""  #If you want to Execute any external Command Before Compilation Start
-     TZ: "Europe/Istanbul"           # Set Time-Zone According To Your Region
+name: SHRP CI
+on:
+  workflow_dispatch:
+    inputs:
+      OFFICIAL_BUILD:
+        description: 'set true if you wanna push Official Build'
+        required: false
+env:
+  MANIFEST: "https://github.com/SHRP/manifest.git -b v3_9.0"
+  # Recovery Manifest URL with -b branch
+  DT_LINK: "https://github.com/Headache01/recovery_GM_GM8_sprout.git"
+  # Your Device Tree Link
+  VENDOR: "GM"
+  # Your Device's Vendor name as in used inside DT. Example: xiaomi, samsung, asus, etc.
+  CODENAME: "GM8_sprout"
+  # Your Device's Codename as in used inside DT." Example: nikel, phoenix, ginkgo, etc.
+  KERNEL_LINK: ""
+  # Kernel repo link with optional -b branch. Only for building kernel from source. Ignore if using prebuilt.
+  TARGET: "bootimage"
+  # Set as recoveryimage (or bootimage if no recovery partition avaiable)
+  FLAVOR: "eng"
+  # eng by default, change the variable if you want userdebug
+  SOURCE: "omni"
+  # Set as omni (or twrp if using v3_11.0)
+  EXTRA_CMD: ""
+  # For qualcomm FDE devices put git clone https://github.com/omnirom/android_vendor_qcom_opensource_commonsys --depth=1 -b android-9.0 vendor/qcom/opensource/commonsys in EXTRA CMD
+  # If you want to Execute any external Command Before Compilation Starts
+  TZ: "Asia/Kolkata"
+
 
 jobs:
-  recovery_builder:
-    runs-on: ubuntu-latest
-    # You can use either of the ubuntu-18.04 or ubuntu-20.04 runner
-    steps:
-      # Checking out the repo is not mandatory, so don't
-      #- uses: actions/checkout@v2
-      # Cleanup The Actions Workspace Using Custom Composite Run Actions
-      - name: "Cleanup Environment"
-        uses: rokibhasansagar/slimhub_actions@main
-      # That's it! Now use this action
-      - name: "Recovery Compilation"
-        uses: CarbonatedBlack/Recovery-Compiler@production
+  shrpCI:
+    runs-on: ubuntu-20.04
 
-       - name: Upload SHRP zip to github
-         uses: actions/upload-artifact@v3
-         with:
-              name: SHRP Recovery Github Test
-              path: ${BuildPath}/out/target/product/${CODENAME}/*stable*.zip
-       
+    steps:
+       - name: Cleaning Up Runner
+         uses: rokibhasansagar/slimhub_actions@main
+
+       - name: Recovery Compilation
+         uses: SHRP-Devices/Recovery-Compiler@release
+
+       - name: Uploading SHRP Build
+         run: |
+              cd ${BuildPath}/out/target/product/${CODENAME}/
+              curl -sL https://git.io/file-transfer | sh
+              ./transfer wet *SHRP*.zip
+              ./transfer wet *Addon*.zip
+    
